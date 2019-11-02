@@ -3,7 +3,7 @@
 Autoencoder (AE) is an unsupervised deep learning algorithm, capable of extracting useful features from data. To do so, the model tries to learn an approximation to identity function, setting the labels equal to input. Although learning an identity function may seem like an easy task, placing some constrains on a model makes it discover essential features for reconstructing input data. Typically, these constraints are imposed on the middle layer of AE model, and consist in limiting the number of neurons.
 
 Autoencoder architecture.
-![SAE](https://miro.medium.com/max/1050/1*P7aFcjaMGLwzTvjW3sD-5Q.jpeg)
+![SAE](/images/SAE.jpeg)
 
 In the image above, AE is applied to image from MNIST dataset with size 28*28 pixels. Passing it through middle layer (also called latent space), which has 10 neurons, network is forced to learn a lower dimension representation of the image, thus learning to reconstruct a 784-dimensional data from 10-dimensional space.
 
