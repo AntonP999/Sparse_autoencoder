@@ -13,11 +13,12 @@ Restrictions on latent representation can be imposed not only by limiting number
 
 The sparsity constraint is penalizing activations of neurons in such way, that only few of them can be active at the same time. By "active" here means that activation of this particular neuron is close to 1, while inactive neurons activate close to 0. Most of the time neurons should be inactive. So with only few hidden units active for some input data and ability to reconstruct input one can say that model has learned some usefull features from data and not overfitting.
 
-One way to achive that is by adding to the loss function a Kullback-Leibler divergence between Bernoulli distribution whith mean $\rho$ ![rho](http://chart.apis.google.com/chart?cht=tx&chl=\rho) and distribution of latent layer activations:
+One way to achive that is by adding to the loss function a Kullback-Leibler divergence between Bernoulli distribution whith mean ![rho](http://chart.apis.google.com/chart?cht=tx&chl=_\rho) and distribution of latent layer activations:
 
 $D_{KL}(\rho||\hat{\rho}) = \rho\log{\frac{\rho}{\hat{\rho}}} + (1-\rho)\log{\frac{(1-\rho)}{(1-\hat{\rho})}}$,
+![DKL](http://chart.apis.google.com/chart?cht=tx&chl=D_{KL}(\rho||\hat{\rho}) = \rho\log{\frac{\rho}{\hat{\rho}}} + (1-\rho)\log{\frac{(1-\rho)}{(1-\hat{\rho})}})
 
-where $\hat{\rho}$ is the mean of distribution of latent neurons activations over training data. Setting $\rho$ to small value will force hidden neurons activations be mostly close to 0. Thus, this is a way of regularizing activations of neurons and make them data-dependend, where different neurons "fire" from different input samples.
+where ![rhohat](http://chart.apis.google.com/chart?cht=tx&chl=\hat{_\rho}) is the mean of distribution of latent neurons activations over training data. Setting $\rho$ to small value will force hidden neurons activations be mostly close to 0. Thus, this is a way of regularizing activations of neurons and make them data-dependend, where different neurons "fire" from different input samples.
 
 
 
