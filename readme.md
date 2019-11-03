@@ -13,8 +13,11 @@ Restrictions on latent representation can be imposed not only by limiting number
 
 The sparsity constraint is penalizing activations of neurons in such way, that only few of them can be active at the same time. By "active" here means that activation of this particular neuron is close to 1, while inactive neurons activate close to 0. Most of the time neurons should be inactive. So with only few hidden units active for some input data and ability to reconstruct input one can say that model has learned some usefull features from data and not overfitting.
 
-One way to achive that is by adding to the loss function a Kullback-Leibler divergence between Bernoulli distribution whith mean ![rho](http://chart.apis.google.com/chart?cht=tx&chl=_\rho) and distribution of latent layer activations:
+One way to achive that is by adding to the loss function a Kullback-Leibler divergence between Bernoulli distribution whith mean <img src="/tex/6dec54c48a0438a5fcde6053bdb9d712.svg?invert_in_darkmode&sanitize=true" align=middle width=8.49888434999999pt height=14.15524440000002pt/> and distribution of latent layer activations:
 
-$D_{KL}(\rho||\hat{\rho}) = \rho\log{\frac{\rho}{\hat{\rho}}} + (1-\rho)\log{\frac{(1-\rho)}{(1-\hat{\rho})}}$,
+<img src="/tex/77cfa7d35f1f6e57bffec24519aaf628.svg?invert_in_darkmode&sanitize=true" align=middle width=274.40292165pt height=33.20539859999999pt/>,
 
-where ![rhohat](http://chart.apis.google.com/chart?cht=tx&chl=\hat{_\rho}) is the mean of distribution of latent neurons activations over training data. Setting $\rho$ to small value will force hidden neurons activations be mostly close to 0. Thus, this is a way of regularizing activations of neurons and make them data-dependend, where different neurons "fire" from different input samples.
+where <img src="/tex/2ece8916c80529609c5cc5d5b4e259f4.svg?invert_in_darkmode&sanitize=true" align=middle width=9.728951099999989pt height=22.831056599999986pt/> is the mean of distribution of latent neurons activations over training data. Setting <img src="/tex/6dec54c48a0438a5fcde6053bdb9d712.svg?invert_in_darkmode&sanitize=true" align=middle width=8.49888434999999pt height=14.15524440000002pt/> to small value will force hidden neurons activations be mostly close to 0. Thus, this is a way of regularizing activations of neurons and make them data-dependend, where different neurons "fire" from different input samples.
+
+
+
