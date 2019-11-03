@@ -15,7 +15,7 @@ The sparsity constraint is penalizing activations of neurons in such way, that o
 
 One way to achive that is by adding to the loss function a Kullback-Leibler divergence between Bernoulli distribution whith mean <img src="/tex/6dec54c48a0438a5fcde6053bdb9d712.svg?invert_in_darkmode&sanitize=true" align=middle width=8.49888434999999pt height=14.15524440000002pt/> and distribution of latent layer activations:
 
-<img src="/tex/77cfa7d35f1f6e57bffec24519aaf628.svg?invert_in_darkmode&sanitize=true" align=middle width=274.40292165pt height=33.20539859999999pt/> ,
+<img src="/tex/77cfa7d35f1f6e57bffec24519aaf628.svg?invert_in_darkmode&sanitize=true" align=middle width=274.40292165pt height=33.20539859999999pt/>
 
 where <img src="/tex/2ece8916c80529609c5cc5d5b4e259f4.svg?invert_in_darkmode&sanitize=true" align=middle width=9.728951099999989pt height=22.831056599999986pt/> is the mean of distribution of latent neurons activations over training data. Setting <img src="/tex/6dec54c48a0438a5fcde6053bdb9d712.svg?invert_in_darkmode&sanitize=true" align=middle width=8.49888434999999pt height=14.15524440000002pt/> to small value will force hidden neurons activations be mostly close to 0. Thus, this is a way of regularizing activations of neurons and make them data-dependend, where different neurons "fire" from different input samples.
 
