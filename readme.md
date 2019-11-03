@@ -13,7 +13,7 @@ Restrictions on latent representation can be imposed not only by limiting number
 
 The sparsity constraint is penalizing activations of neurons in such way, that only few of them can be active at the same time. By "active" here means that activation of this particular neuron is close to 1, while inactive neurons activate close to 0. Most of the time neurons should be inactive. So with only few hidden units active for some input data and ability to reconstruct input one can say that model has learned some usefull features from data and not overfitting.
 
-One way to achive that is by adding to the loss function a Kullback-Leibler divergence between Bernoulli distribution whith mean $\rho$ [rho]: http://chart.apis.google.com/chart?cht=tx&chl=\\rho and distribution of latent layer activations:
+One way to achive that is by adding to the loss function a Kullback-Leibler divergence between Bernoulli distribution whith mean $\rho$ [rho]: http://chart.apis.google.com/chart?cht=tx&chl=\rho and distribution of latent layer activations:
 
 $D_{KL}(\rho||\hat{\rho}) = \rho\log{\frac{\rho}{\hat{\rho}}} + (1-\rho)\log{\frac{(1-\rho)}{(1-\hat{\rho})}}$,
 
