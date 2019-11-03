@@ -16,7 +16,8 @@ The sparsity constraint is penalizing activations of neurons in such way, that o
 One way to achive that is by adding to the loss function a Kullback-Leibler divergence between Bernoulli distribution whith mean ![rho](http://chart.apis.google.com/chart?cht=tx&chl=_\rho) and distribution of latent layer activations:
 
 $D_{KL}(\rho||\hat{\rho}) = \rho\log{\frac{\rho}{\hat{\rho}}} + (1-\rho)\log{\frac{(1-\rho)}{(1-\hat{\rho})}}$,
-![DKL](http://chart.apis.google.com/chart?cht=tx&chl=D_{KL}(\rho||\hat{\rho}) = \rho\log{\frac{\rho}{\hat{\rho}}} + (1-\rho)\log{\frac{(1-\rho)}{(1-\hat{\rho})}})
+
+![DKL](http://chart.apis.google.com/chart?cht=tx&chl=D_{KL}(\rho||\hat{\rho})=\rho\log{\frac{\rho}{\hat{\rho}}}+(1-\rho)\log{\frac{(1-\rho)}{(1-\hat{\rho})}})
 
 where ![rhohat](http://chart.apis.google.com/chart?cht=tx&chl=\hat{_\rho}) is the mean of distribution of latent neurons activations over training data. Setting $\rho$ to small value will force hidden neurons activations be mostly close to 0. Thus, this is a way of regularizing activations of neurons and make them data-dependend, where different neurons "fire" from different input samples.
 
